@@ -12884,7 +12884,22 @@
                       children: [
                         (0, Ln.jsx)("button", {
                           className: "button-main align-center",
-                          onClick: () => n("/kids"),
+                          onClick: () => {
+                            const url = "https://santa.apped.me/";
+                            navigator.clipboard
+                              .writeText(url)
+                              .then(() => {
+                                alert(
+                                  "🎄 Ho Ho Ho! The URL has been copied to your clipboard. Share the Christmas cheer! 🎅"
+                                );
+                              })
+                              .catch((err) => {
+                                console.error("Failed to copy URL:", err);
+                                alert(
+                                  "Oops! Something went wrong. Santa couldn't copy the URL. 🎅"
+                                );
+                              });
+                          },
                           children: "Share with your kid!",
                         }),
                         (0, Ln.jsxs)("div", {
@@ -12919,7 +12934,7 @@
                   children: (0, Ln.jsx)("iframe", {
                     className: "santa-iframe",
                     allow: "microphone; xr-spatial-tracking",
-                    src: "https://eternity.ac/pricing-Santa",
+                    src: " ",
                   }),
                 }),
                 (0, Ln.jsxs)("div", {
